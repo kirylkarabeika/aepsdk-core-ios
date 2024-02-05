@@ -29,7 +29,7 @@ class ApplicationSystemInfoService: SystemInfoService {
     private lazy var userAgent: String = {
         let model = UIDevice.current.model
         let osVersion = UIDevice.current.systemVersion.replacingOccurrences(of: ".", with: "_")
-        let localeIdentifier = getSystemLocaleName().userAgentLocale ?? DEFAULT_LOCALE
+        let localeIdentifier = getActiveLocaleName()
 
         return "Mozilla/5.0 (\(model); CPU OS \(osVersion) like Mac OS X; \(localeIdentifier))"
     }()
